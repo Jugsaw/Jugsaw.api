@@ -15,7 +15,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: api
+          images: ghcr.io/${{ github.actor }}/api
 
       - name: Login to DockerHub
         uses: docker/login-action@v2
