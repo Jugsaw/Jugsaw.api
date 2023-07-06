@@ -265,7 +265,7 @@ def on_artifact_push(a: ArtifactPushedData):
             "metadata": {"name": name},
             "spec": {
                 "replicas": 1,
-                "selector": {"matchLabels": {"app": name}},
+                "selector": {"matchLabels": {"app": name, "namespace": "jugsaw"}},
                 "template": {
                     "metadata": {
                         "labels": {"app": name},
