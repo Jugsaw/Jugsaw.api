@@ -1,6 +1,5 @@
 global:
-  registry: harbor.jugsaw.co
+  registry: ghcr.io
   domain: jugsaw.co
   image:
     pullSecrets:
-    - name: harbor-registry-jugsaw-deploy
