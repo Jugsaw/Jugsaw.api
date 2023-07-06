@@ -2,6 +2,7 @@ import aiohttp
 
 from typing_extensions import Annotated
 from fastapi import Request, Depends, FastAPI, HTTPException, status
+from fastapi.responses import RedirectResponse
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from cloudevents.http import from_http
 
@@ -206,6 +207,10 @@ async def handle_harbor_webhook(
 def subscribe():
     return []
 
+
+@app.get("/", include_in_schema=False)
+async def docs_redirect():
+    return RedirectResponse(url="/docs")
 
 #####
 
